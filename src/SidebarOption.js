@@ -1,11 +1,23 @@
 import React from 'react';
 import styled from "styled-components";
+import { db } from "./firebase";
+// import { useCollection } from "react-firebase-hooks/firestore";
+
 
 
 function SidebarOption({ Icon, title, AddChannelOption }) {
+    // const [channels, loading, error] = useCollection(db.collection('room'))
+
+    // get de channels, get charge state(loading), if there is an error, we get the error(error)
 
     const addChannel = () => {
+        const channelName = prompt('Please add channel name!');
 
+        if (channelName) {
+            db.collection('rooms').add({
+                name: channelName,
+            })
+        }
     }
 
     const selectChannel = () => {
