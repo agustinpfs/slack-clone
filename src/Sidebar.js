@@ -20,7 +20,9 @@ import { db } from './firebase';
 
 
 function Sidebar() {
-    const [channels, loading, error] = useCollection(db.collection('rooms'))
+    const [channels, loading, error] = useCollection(db.collection('rooms'));
+    // get de channels, get charge state(loading), if there is an error, we get the error(error)
+
 
     return (
         <SidebarContainer>
@@ -64,6 +66,7 @@ const SidebarContainer = styled.div`
     flex: 0.3;
     border-top: 1px solid #49274b;
     margin-top: 60px;
+    overflow: scroll;
 
     > hr {
         margin-top: 10px;

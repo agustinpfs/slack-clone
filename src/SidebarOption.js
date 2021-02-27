@@ -1,14 +1,13 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import styled from "styled-components";
+import { enterRoom } from './features/appSlice';
 import { db } from "./firebase";
-// import { useCollection } from "react-firebase-hooks/firestore";
 
 
 
 function SidebarOption({ Icon, title, AddChannelOption, id }) {
-    // const [channels, loading, error] = useCollection(db.collection('room'))
-
-    // get de channels, get charge state(loading), if there is an error, we get the error(error)
+    const dispatch = useDispatch();
 
     const addChannel = () => {
         const channelName = prompt('Please add channel name!');
@@ -21,7 +20,11 @@ function SidebarOption({ Icon, title, AddChannelOption, id }) {
     }
 
     const selectChannel = () => {
-
+        if (id) {
+            dispatch(enterRoom({
+                roomId: id
+            }))
+        }
     }
 
 
