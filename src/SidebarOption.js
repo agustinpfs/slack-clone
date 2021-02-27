@@ -5,7 +5,7 @@ import { db } from "./firebase";
 
 
 
-function SidebarOption({ Icon, title, AddChannelOption }) {
+function SidebarOption({ Icon, title, AddChannelOption, id }) {
     // const [channels, loading, error] = useCollection(db.collection('room'))
 
     // get de channels, get charge state(loading), if there is an error, we get the error(error)
@@ -65,4 +65,7 @@ const SidebarOptionConteiner = styled.div`
         padding: 15px;
     }
 `
-const SidebarOptionChanel = styled.div``
+const SidebarOptionChanel = styled.h3`
+    padding: 10px 0;
+    font-weight: 300;
+`
