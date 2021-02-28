@@ -9,6 +9,7 @@ import {
 import Header from './Header';
 import Sidebar from './Sidebar';
 import styled from "styled-components";
+import Chat from './Chat';
 
 
 
@@ -22,6 +23,7 @@ function App() {
             <Sidebar />
             <Switch>
               <Route path="/" exact>
+                <Chat />
               </Route>
             </Switch>
           </AppBody>
